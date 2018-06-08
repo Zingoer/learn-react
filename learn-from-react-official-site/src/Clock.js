@@ -35,9 +35,17 @@ class Clock extends React.Component {
   }
 
   render() {
+    let greeting='';
+    if(this.props.name == 'Xiaoxi'){
+        greeting = `Funny ${this.props.name}`
+    }else if(this.props.name == 'Yiyi'){
+        greeting = `Beautiful ${this.props.name}`
+    }else{
+        greeting = "No Name!"
+    }
     return (
       <div>
-        <h1>Hello, this is {this.props.name}!</h1>
+        <h1>Hello, this is {greeting}!</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
         <h3>The number is increment to {this.state.counter}</h3>
         <a href="#" onClick={this.handleClickFakeLine}>This is a fake link</a>
