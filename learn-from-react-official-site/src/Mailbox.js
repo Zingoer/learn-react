@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import List from './List';
 
 class Mailbox extends Component {
+    
     render() {
         return (
             <div>
@@ -10,6 +12,7 @@ class Mailbox extends Component {
                         You have {this.props.mails.length} unread messages.
                 </h2>
                 }
+                <List mails={this.props.mails}/>
             </div>
         );
     }

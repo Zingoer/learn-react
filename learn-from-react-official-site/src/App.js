@@ -18,7 +18,8 @@ class App extends Component {
   onClick = (text) => {
     if(text){
       this.setState({
-        mails: this.state.mails.concat([text])
+        mails: this.state.mails.concat([text]),
+        name: text
       })
     }
   }
