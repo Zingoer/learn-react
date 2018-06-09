@@ -10,18 +10,24 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mails:'',
+      mails:[],
       name:''
     }
   }
 
-  onChange = (e) => {
-    console.log(e.target.value);
-    this.setState({
-      mails:e.target.value,
-      name:e.target.value
-    });
+  onClick = (text) => {
+    if(text){
+      this.setState({
+        mails: this.state.mails.concat([text])
+      })
+    }
   }
+
+  onChange = (e) => {
+    this.setState({
+        text: e.target.vale
+    });
+}
 
   render() {
     return (
@@ -35,7 +41,7 @@ class App extends Component {
         </p>
         <Clock name={this.state.name} increment={1}/>
         <Toggle />
-        <Input onChange={this.onChange} />
+        <Input onClick={this.onClick} onChange={this.onChange}/>
         <Mailbox mails={this.state.mails}/>
       </div>
     );

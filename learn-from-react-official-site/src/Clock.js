@@ -36,9 +36,9 @@ class Clock extends React.Component {
 
   render() {
     let greeting='';
-    if(this.props.name == 'Xiaoxi'){
+    if(this.props.name === 'Xiaoxi'){
         greeting = `Funny ${this.props.name}`
-    }else if(this.props.name == 'Yiyi'){
+    }else if(this.props.name === 'Yiyi'){
         greeting = `Beautiful ${this.props.name}`
     }else{
         greeting = "No Name!"
