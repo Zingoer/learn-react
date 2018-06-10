@@ -1,10 +1,10 @@
 #/bin/bash!
 
 # Color
-INFO='\033[32m'    # Green
-TIP='\033[34m'     # Blue
-ERROR='\033[31m'  # Red
-END='\033[39m'       # No Color
+INFO='\033[38;5;29m'    # Dark Green
+TIP='\033[38;5;25m'     # Ocean Blue
+ERROR='\033[38;5;124m'  # Red
+END='\033[0m'       # No Color
 
 # Virables
 REPO_NAME=learn-react
@@ -99,8 +99,7 @@ stop_and_rm_container_if_running(){
 
 # Stop and remove all of the containers
 remove_all(){
-    echo -e "${INFO}Stop and remove ${REPO_NAME}...${END}" &&\
-    stop_and_rm_container ${REPO_NAME}
+    stop_and_rm_container_if_running ${REPO_NAME}
 }
 
 # Main
