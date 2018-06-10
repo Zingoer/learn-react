@@ -1,4 +1,4 @@
-#/bin/bash!
+#!/bin/bash
 
 # Color
 INFO='\033[38;5;29m'    # Dark Green
@@ -108,11 +108,11 @@ install_jq
 echo -e "${INFO}Select one action:${END}"
 
 actions=(
-    "Build ${REPO_NAME} image"
-    "Start ${REPO_NAME} container"
-    "Stop ${REPO_NAME} container"
-    "Run npm command through Docker"
-    "Quit"
+"Build ${REPO_NAME} image"
+"Start ${REPO_NAME} container"
+"Stop ${REPO_NAME} container"
+"Run npm command through Docker"
+"Quit"
 )
 
 select action in "${actions[@]}"
