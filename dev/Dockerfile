@@ -5,7 +5,7 @@ LABEL description="image to learn react"
 
 ARG DEV_HOME
 
-ENV PROJECT_DIR $DEV_HOME/learn-from-react-official-site
+ENV PROJECT_DIR $DEV_HOME/try-redux
 
 WORKDIR $PROJECT_DIR
 

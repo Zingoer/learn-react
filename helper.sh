@@ -49,7 +49,7 @@ build_image_if_not_exist(){
     if [[ -z "$(docker images -q ${IMAGE_NAME})" ]];then
         build_image
     else 
-        echo -e "${INFO}${IMAGE_NAME} already exists...${END}"
+        echo -e "${INFO}Image ${IMAGE_NAME} already exists...${END}"
     fi
 }
 
@@ -59,7 +59,7 @@ create_network(){
         echo -e "${INFO}Create network ${NETWORK_NAME}...${END}"
         docker network create ${NETWORK_NAME} --driver=bridge
     else
-        echo -e "${INFO}${NETWORK_NAME} already exists...${END}"
+        echo -e "${INFO}Network ${NETWORK_NAME} already exists...${END}"
     fi
 }
 
@@ -68,7 +68,7 @@ start_app(){
         echo -e "${INFO}Start ${REPO_NAME}..." &&\
         docker run --rm -it --name ${REPO_NAME} -v $(pwd):$(pwd) -p ${PORT}:${PORT} --network ${NETWORK_NAME} ${IMAGE_NAME}
     else
-        echo -e "${INFO}${REPO_NAME} is already up...${END}"
+        echo -e "${INFO}Container ${REPO_NAME} is already up...${END}"
     fi
 }
 
