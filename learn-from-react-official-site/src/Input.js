@@ -5,24 +5,27 @@ class Input extends Component{
         super(props);
         this.word = '';
         this.state = {
-            text:'default'
+            text:'I love Yiyi'
         }
     }
     
-    onChange = (e) => {
-        this.word = e.target.value;
+    handleChange = (event) => {
+        this.setState({
+            text: event.target.value
+        })
     }
 
-    handleClick = () => {
-        this.props.onClick(this.word);
+    handleClick = (event) => {
+        this.props.onClick(this.state.text);
+        event.preventDefault();
     }
 
     render(){
         return(
-            <div>
-                <input onChange={this.onChange} />
-                <button onClick={this.handleClick}>Save</button>
-            </div>
+            <form onSubmit={this.handleClick}>
+                <input type="text" value={this.state.text} onChange={this.handleChange} />
+                <input type="submit" value="Submit" />
+            </form>
         );
     }
 }

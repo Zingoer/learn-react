@@ -24,12 +24,6 @@ class App extends Component {
     }
   }
 
-  onChange = (e) => {
-    this.setState({
-        text: e.target.vale
-    });
-}
-
   render() {
     return (
       <div className="App">
@@ -42,7 +36,7 @@ class App extends Component {
         </p>
         <Clock name={this.state.name} increment={1}/>
         <Toggle />
-        <Input onClick={this.onClick} onChange={this.onChange}/>
+        <Input onClick={this.onClick}/>
         <Mailbox mails={this.state.mails}/>
       </div>
     );
