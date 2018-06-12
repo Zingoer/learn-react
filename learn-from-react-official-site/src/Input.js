@@ -1,33 +1,39 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-class Input extends Component{
-    constructor(props){
-        super(props);
-        this.word = '';
-        this.state = {
-            text:'I love Yiyi'
-        }
-    }
-    
-    handleChange = (event) => {
-        this.setState({
-            text: event.target.value
-        })
-    }
+class Input extends Component {
+  constructor(props) {
+    super(props);
+    this.word = "";
+    this.state = {
+      text: "xiaoxi"
+    };
+  }
 
-    handleClick = (event) => {
-        this.props.onClick(this.state.text);
-        event.preventDefault();
-    }
+  handleChange = event => {
+    this.setState({
+      text: event.target.value
+    });
+  };
 
-    render(){
-        return(
-            <form onSubmit={this.handleClick}>
-                <input type="text" value={this.state.text} onChange={this.handleChange} />
-                <input type="submit" value="Submit" />
-            </form>
-        );
-    }
+  handleClick = event => {
+    this.props.onClick(this.state.text.toUpperCase());
+    event.preventDefault();
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleClick}>
+        <label>
+          Pick your best friend
+          <select value={this.state.text} onChange={this.handleChange}>
+            <option value="yiyi">Yiyi</option>
+            <option value="xiaoxi">Xiaoxi</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }
 
 export default Input;
