@@ -16,14 +16,14 @@
 }
 
 .Title{
-  flex-grow: 2;
+  flex-grow: 1;
 }
 
 #Counter-container{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-grow: 3;
+  flex-grow: 2;
 }
 
 .Button{
