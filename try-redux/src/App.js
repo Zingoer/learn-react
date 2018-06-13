@@ -1,18 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Title from "./Title";
+import Button from "./Button";
+import Count from "./Count";
+import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  handleAddClick = () => {
+    this.setState(prevState => {
+      return { count: prevState.count + 1 };
+    });
+  };
+
+  handleMinusClick = () => {
+    this.setState(prevState => {
+      return { count: prevState.count - 1 };
+    });
+  };
+
   render() {
     return (
+      <div id="Canvas">
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Title className="Title" />
+        <div id="Counter-container">
+          <Button
+            className="Button"
+            buttonText="-"
+            handleClick={this.handleMinusClick}
+          />
+          <Count className="Count" countNumber={this.state.count} />
+          <Button
+            className="Button"
+            buttonText="+"
+            handleClick={this.handleAddClick}
+          />
+        </div>
+      </div>
       </div>
     );
   }

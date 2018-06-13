@@ -1,0 +1,9 @@
+button{
+    border: 1px solid #979797;
+    color: #6a6a6a;
+    width: 3vw;
+    height: 3vw;
+    display: inline-block;
+    font-size: 30px;
+    text-align: center;
+}
