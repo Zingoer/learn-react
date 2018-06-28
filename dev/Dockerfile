@@ -5,7 +5,7 @@ LABEL description="image to learn react"
 
 ARG DEV_HOME
 
-ENV PROJECT_DIR $DEV_HOME/try-redux
+ENV PROJECT_DIR $DEV_HOME/tweet-component
 
 WORKDIR $PROJECT_DIR
 

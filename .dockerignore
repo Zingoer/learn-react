@@ -1,2 +1,3 @@
 #Add unused projects to ignore them when building the projects
 */learn-from-react-official-site*
+*/try-redux*
